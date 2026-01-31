@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mexico City</title>
 
+<meta name="description" content="Mexico City travel and place page with weather and facts.">
+<meta name="author" content="Israel Cirne">
 <link rel="stylesheet" href="styles/place.css">
 <script src="scripts/place.js" defer></script>
 </head>
@@ -40,7 +42,14 @@
 </div>
 
 <div class="card weather">
-  <h2>Weather</h2>
+  <h2>
+      Weather
+      <svg width="26" height="26" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" fill="#FDB813"/>
+        <path d="M4 12h3M17 12h3M12 4v3M12 17v3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"
+              stroke="#FDB813" stroke-width="2"/>
+      </svg>
+  </h2>
   <p>Temperature: <span id="temp">12</span> °C</p>
   <p>Conditions: Partly Cloudy</p>
   <p>Wind: <span id="wind">10</span> km/h</p>

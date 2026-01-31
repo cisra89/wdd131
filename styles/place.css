@@ -1,8 +1,9 @@
 :root {
   --green: #006847;
-  --red: #ce1126;
   --white: #ffffff;
+  --red: #ce1126;
 }
+
 
 * { box-sizing: border-box; }
 
@@ -13,9 +14,7 @@ body {
 
 header {
   background: var(--green);
-  color: white;
-  text-align: center;
-  padding: 1rem;
+  color: var(--white);
 }
 
 .hero {
@@ -28,25 +27,18 @@ header {
 }
 
 .card {
-  background: rgba(255,255,255,0.92);
-  padding: 1rem;
-  width: 260px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  background: rgba(255,255,255,0.95);
 }
 
 .card h2 {
   background: var(--red);
-  color: white;
-  padding: .5rem;
-  margin: -1rem -1rem 1rem -1rem;
+  color: var(--white);
 }
 
-/* mobile layout */
 .data, .weather {
   margin: 1rem;
 }
 
-/* large screen layout */
 @media (min-width: 700px) {
 
 .data {
@@ -62,15 +54,15 @@ header {
 }
 
 /* required pseudo-element icon */
-.weather h2::after {
-  content: " ⛅";
+@media (min-width: 700px) {
+  .weather h2::after {
+    content: " ⛅";
+  }
 }
 
 }
 
 footer {
   background: var(--red);
-  color: white;
-  text-align: center;
-  padding: 1rem;
+  color: var(--white);
 }
