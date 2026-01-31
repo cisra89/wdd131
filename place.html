@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexico City</title>
+
+<link rel="stylesheet" href="styles/place.css">
+<script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Mexico City</h1>
+</header>
+
+<main>
+
+<section class="hero">
+
+<picture>
+  <!-- use webp if you can -->
+  <source srcset="images/palace.webp" type="image/webp">
+  <img src="images/palace.jpg" alt="Mexico City skyline">
+</picture>
+
+<div class="card data">
+  <h2>Data</h2>
+  <ul>
+    <li><b>Country:</b> Mexico</li>
+    <li><b>Population:</b> ~9,200,000</li>
+    <li><b>Elevation:</b> 2,240 m</li>
+    <li><b>Founded:</b> 1325</li>
+    <li><b>Language:</b> Spanish</li>
+    <li><b>Currency:</b> Mexican Peso</li>
+    <li><b>Time Zone:</b> CST (UTC−6)</li>
+    <li><b>Area:</b> 1,495 km²</li>
+  </ul>
+</div>
+
+<div class="card weather">
+  <h2>Weather</h2>
+  <p>Temperature: <span id="temp">12</span> °C</p>
+  <p>Conditions: Partly Cloudy</p>
+  <p>Wind: <span id="wind">10</span> km/h</p>
+  <p>Wind Chill: <span id="chill"></span></p>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Mexico City</p>
+  <p>Last Modified: <span id="modified"></span></p>
+</footer>
+
+</body>
+</html>
