@@ -53,7 +53,6 @@ header {
   right: 40px;
 }
 
-/* required pseudo-element icon */
 @media (min-width: 700px) {
   .weather h2::after {
     content: " ⛅";
