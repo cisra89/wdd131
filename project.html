@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PantechElectronics</title>
+<meta name="description" content="PantechElectronics — browse electronics components and build project quotes.">
+
+<link rel="stylesheet" href="styles/project.css">
+<script defer src="scripts/project.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>PantechElectronics</h1>
+    <nav>
+        <ul>
+            <li><a href="project.html">Products</a></li>
+            <li><a href="quote.html">Quote</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <h2>Your Electronics Component Hub</h2>
+    <p>Compare parts and build your project estimate.</p>
+</section>
+
+<section class="products">
+    <h2>Products</h2>
+
+    <input type="search" id="searchBox" placeholder="Search products">
+
+    <div class="grid">
+
+        <article class="card" data-id="board" data-price="24.99">
+            <img src="images/board.jpg" alt="Microcontroller board" loading="lazy">
+            <h3>Microcontroller Board</h3>
+            <p>$24.99</p>
+            <input type="number" min="0" value="0" class="qty">
+            <button class="addBtn">Add</button>
+        </article>
+
+        <article class="card" data-id="sensor" data-price="9.50">
+            <img src="images/sensors.jpg" alt="Sensor kit" loading="lazy">
+            <h3>Sensor Kit</h3>
+            <p>$9.50</p>
+            <input type="number" min="0" value="0" class="qty">
+            <button class="addBtn">Add</button>
+        </article>
+
+        <article class="card" data-id="resistor" data-price="4.75">
+            <img src="images/resistors.jpg" alt="Resistor pack" loading="lazy">
+            <h3>Resistor Pack</h3>
+            <p>$4.75</p>
+            <input type="number" min="0" value="0" class="qty">
+            <button class="addBtn">Add</button>
+        </article>
+
+    </div>
+</section>
+
+<section class="summary">
+    <h2>Quote Total</h2>
+    <p>Total: $<span id="total">0.00</span></p>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 PantechElectronics</p>
+</footer>
+
+</body>
+</html>

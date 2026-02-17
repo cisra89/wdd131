@@ -1,0 +1,60 @@
+:root {
+    --blue:#0b3c5d;
+    --yellow:#f4b400;
+    --gray:#f5f7fa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:var(--gray);
+}
+
+header {
+    background:var(--blue);
+    color:white;
+    padding:1rem;
+}
+
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:1rem;
+    padding:0;
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+}
+
+.hero {
+    text-align:center;
+    padding:2rem;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+    padding:1rem;
+}
+
+.card {
+    background:white;
+    padding:1rem;
+    border-radius:8px;
+}
+
+button {
+    background:var(--yellow);
+    border:none;
+    padding:.5rem;
+    cursor:pointer;
+}
+
+.summary {
+    text-align:center;
+    font-size:1.4rem;
+    padding:1rem;
+}
