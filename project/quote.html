@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quote summary and total cost for selected electronics parts.">
+<title>Quote Summary | PantechElectronics</title>
+
+<link rel="stylesheet" href="styles/project.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="site-header">
+    <h1>PantechElectronics</h1>
+    <nav>
+        <a href="project.html">Home</a>
+        <a href="quote.html" class="active">Quote</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero-small">
+    <h2>Your Quote Summary</h2>
+    <p>Review your selected parts and total estimate</p>
+</section>
+
+
+<section class="quote-section">
+
+<table class="quote-table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Line Total</th>
+        </tr>
+    </thead>
+    <tbody id="quoteBody">
+    </tbody>
+</table>
+
+
+<div class="quote-totals">
+
+    <p>Subtotal: $<span id="subtotal">0.00</span></p>
+    <p>Tax (6%): $<span id="tax">0.00</span></p>
+    <p class="grand-total">
+        Total: $<span id="total">0.00</span>
+    </p>
+
+    <button id="clearCart" class="btn-primary">Clear Cart</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+    <p>&copy; 2026 PantechElectronics</p>
+</footer>
+
+
+<script>
+
+const TAX_RATE = 0.06
+
+function loadQuote() {
+
+    const body = document.getElementById("quoteBody")
+    body.innerHTML = ""
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+    if (cart.length === 0) {
+        body.innerHTML = `<tr><td colspan="4">No items in cart</td></tr>`
+        updateTotals(0)
+        return
+    }
+
+    cart.forEach(item => {
+
+        const lineTotal = item.price * item.qty
+
+        body.innerHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>$${lineTotal.toFixed(2)}</td>
+            </tr>
+        `
+    })
+
+    const subtotal = cart.reduce(
+        (sum, item) => sum + item.price * item.qty, 0
+    )
+
+    updateTotals(subtotal)
+}
+
+
+function updateTotals(subtotal) {
+
+    const tax = subtotal * TAX_RATE
+    const total = subtotal + tax
+
+    document.getElementById("subtotal").textContent =
+        subtotal.toFixed(2)
+
+    document.getElementById("tax").textContent =
+        tax.toFixed(2)
+
+    document.getElementById("total").textContent =
+        total.toFixed(2)
+}
+
+
+document.getElementById("clearCart").addEventListener("click", () => {
+    localStorage.removeItem("cart")
+    loadQuote()
+})
+
+loadQuote()
+
+</script>
+
+</body>
+</html>

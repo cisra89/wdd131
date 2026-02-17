@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact PantechElectronics for quotes, product availability, and technical questions.">
+    <title>Contact | PantechElectronics</title>
+
+    <link rel="stylesheet" href="styles/project.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="site-header">
+    <h1>PantechElectronics</h1>
+
+    <nav>
+        <a href="project.html">Home</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
+
+
+<main>
+
+<section class="hero-small">
+    <h2>Contact & Quote Requests</h2>
+    <p>Need pricing or availability? Send us your request.</p>
+</section>
+
+
+<section class="contact-grid">
+
+    <form id="contactForm" class="contact-form">
+
+        <fieldset>
+            <legend>Customer Information</legend>
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Request Details</legend>
+
+            <label for="topic">Request Type</label>
+            <select id="topic" name="topic" required>
+                <option value="">Select one</option>
+                <option value="quote">Quote Request</option>
+                <option value="availability">Availability</option>
+                <option value="technical">Technical Question</option>
+                <option value="other">Other</option>
+            </select>
+
+
+            <p>Preferred Contact Method</p>
+
+            <label>
+                <input type="radio" name="contact_method" value="email" required>
+                Email
+            </label>
+
+            <label>
+                <input type="radio" name="contact_method" value="phone">
+                Phone
+            </label>
+
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+        </fieldset>
+
+
+        <button type="submit" class="btn-primary">Send Request</button>
+
+        <p id="formStatus" class="form-status"></p>
+
+    </form>
+
+
+    <aside class="contact-info">
+
+        <img src="images/store.jpg"
+             alt="Electronics components workspace"
+             loading="lazy">
+
+        <h3>Store Hours</h3>
+        <p>Mon–Fri: 9am – 6pm</p>
+        <p>Sat: 10am – 4pm</p>
+
+        <h3>Email</h3>
+        <p>sales@pantechelectronics.com</p>
+
+        <h3>Response Time</h3>
+        <p>Usually within 24 hours.</p>
+
+    </aside>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+    <p>&copy; 2026 PantechElectronics</p>
+</footer>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("fullname").value.trim();
+    const status = document.getElementById("formStatus");
+
+    if (name.length < 3) {
+        status.textContent = "Please enter a valid name.";
+        return;
+    }
+
+    status.textContent = `Thank you ${name}, your request was sent.`;
+    this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
 <meta name="description" content="PantechElectronics — browse electronics components and build project quotes.">
 
 <link rel="stylesheet" href="styles/project.css">
-<script defer src="scripts/project.js"></script>
+<script defer src="scrips/project.js"></script>
 </head>
 
 <body>
@@ -31,12 +31,14 @@
     <p>Compare parts and build your project estimate.</p>
 </section>
 
+<section class="searchSection">
+    <input type="search" id="searchBox" placeholder="Search products">
+</section>
+
 <section class="products">
     <h2>Products</h2>
 
-    <input type="search" id="searchBox" placeholder="Search products">
-
-    <div class="grid">
+    <div class="grid" id="productGrid">
 
         <article class="card" data-id="board" data-price="24.99">
             <img src="images/board.jpg" alt="Microcontroller board" loading="lazy">
@@ -65,10 +67,22 @@
     </div>
 </section>
 
+<section id="quoteSection">
+    <h2>Your Quote Cart</h2>
+
+    <div id="cartList"></div>
+
+    <div class="totalsBox">
+        <p>Tax (6%): $<span id="tax">0.00</span></p>
+        <p class="grandTotal">Total: $<span id="cartTotal">0.00</span></p>
+    </div>
+</section>
+
 <section class="summary">
     <h2>Quote Total</h2>
-    <p>Total: $<span id="total">0.00</span></p>
+    <p>$<span id="quoteTotal">0.00</span></p>
 </section>
+
 
 </main>
 
@@ -78,3 +92,4 @@
 
 </body>
 </html>
+
