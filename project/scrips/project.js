@@ -54,12 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const tax = subtotal * store.taxRate;
         const total = subtotal + tax;
 
-        if (subtotalEl) subtotalEl.textContent = subtotal.toFixed(2);
+        const taxEl = document.getElementById("tax");
+        const cartTotalEl = document.getElementById("cartTotal");
+        const quoteTotalEl = document.getElementById("quoteTotal");
+
         if (taxEl) taxEl.textContent = tax.toFixed(2);
-        if (totalEl) totalEl.textContent = total.toFixed(2);
+        if (cartTotalEl) cartTotalEl.textContent = total.toFixed(2);
+        if (quoteTotalEl) quoteTotalEl.textContent = total.toFixed(2);
 
         renderCart();
     }
+
 
 
     function addItem(id, price, qty) {
