@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cartArray.push({ id, price, qty });
         }
 
-        saveCart();   // required line inside
+        saveCart();   
         updateTotal();
     }
 
